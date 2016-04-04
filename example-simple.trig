@@ -1,0 +1,64 @@
+@prefix g8data: <http://data.krw.d2s.labs.vu.nl/group8/resource/> .
+@prefix g8vocab: <http://data.krw.d2s.labs.vu.nl/group8/vocab/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+g8data:examplegraph {
+    g8data:Jake g8vocab:address "12E Street 98"^^xsd:string ;
+        g8vocab:age "42"^^xsd:int ;
+        g8vocab:country g8data:United_States_of_America ;
+        g8vocab:favourite_colour g8data:Purple ;
+        g8vocab:hobby g8data:Ballet ;
+        g8vocab:name "Jake"^^xsd:string ;
+        g8vocab:place g8data:Amsterdam .
+
+    g8data:Jenny g8vocab:address "Leidseplein 2"^^xsd:string ;
+        g8vocab:age "12"^^xsd:int ;
+        g8vocab:country g8data:The_Netherlands ;
+        g8vocab:favourite_colour g8data:Mauve ;
+        g8vocab:hobby g8data:Dancing ;
+        g8vocab:name "Jenny"^^xsd:string ;
+        g8vocab:place g8data:Amsterdam .
+
+    g8data:Jill g8vocab:address "52W Street 5"^^xsd:string ;
+        g8vocab:age "28"^^xsd:int ;
+        g8vocab:country g8data:United_States_of_America ;
+        g8vocab:favourite_colour g8data:Cyan ;
+        g8vocab:hobby g8data:Carpentry ;
+        g8vocab:name "Jill"^^xsd:string ;
+        g8vocab:place g8data:Amsterdam .
+
+    g8data:John g8vocab:address "Dam 52"^^xsd:string ;
+        g8vocab:age "32"^^xsd:int ;
+        g8vocab:country g8data:The_Netherlands ;
+        g8vocab:favourite_colour g8data:Blue ;
+        g8vocab:hobby g8data:Fishing ;
+        g8vocab:name "John"^^xsd:string ;
+        g8vocab:place g8data:Amsterdam .
+
+    g8data:Ballet g8vocab:name "Ballet"@en .
+
+    g8data:Blue g8vocab:name "Blue"@en .
+
+    g8data:Carpentry g8vocab:name "Carpentry"@en .
+
+    g8data:Cyan g8vocab:name "Cyan"@en .
+
+    g8data:Dancing g8vocab:name "Dancing"@en .
+
+    g8data:Fishing g8vocab:name "Fishing"@en .
+
+    g8data:Mauve g8vocab:name "Mauve"@en .
+
+    g8data:Purple g8vocab:name "Purple"@en .
+
+    g8data:The_Netherlands g8vocab:name "The Netherlands"@en .
+
+    g8data:United_States_of_America g8vocab:name "United States of America"@en .
+
+    g8data:Amsterdam g8vocab:name "Amsterdam"@en .
+}
+

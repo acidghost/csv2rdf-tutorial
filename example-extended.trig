@@ -1,0 +1,133 @@
+@prefix : <http://data.krw.d2s.labs.vu.nl/group8/vocab/> .
+@prefix g8data: <http://data.krw.d2s.labs.vu.nl/group8/resource/> .
+@prefix g8vocab: <http://data.krw.d2s.labs.vu.nl/group8/vocab/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    g8data:Ballet a :Hobby ;
+        rdfs:label "Ballet"@en .
+
+    g8data:Blue a :Colour ;
+        rdfs:label "Blue"@en .
+
+    g8data:Carpentry a :Hobby ;
+        rdfs:label "Carpentry"@en .
+
+    g8data:Cyan a :Colour ;
+        rdfs:label "Cyan"@en .
+
+    g8data:Dancing a :Hobby ;
+        rdfs:label "Dancing"@en .
+
+    g8data:Fishing a :Hobby ;
+        rdfs:label "Fishing"@en .
+
+    g8data:Mauve a :Colour ;
+        rdfs:label "Mauve"@en .
+
+    g8data:Purple a :Colour ;
+        rdfs:label "Purple"@en .
+
+    g8data:The_Netherlands a :Country ;
+        rdfs:label "The Netherlands"@en .
+
+    <http://data.krw.d2s.labs.vu.nl/group8/resource/The_Netherlands/Amsterdam> a :Place ;
+        rdfs:label "Amsterdam"@en .
+
+    g8data:United_States_of_America a :Country ;
+        rdfs:label "United States of America"@en .
+
+    <http://data.krw.d2s.labs.vu.nl/group8/resource/United_States_of_America/Amsterdam> a :Place ;
+        rdfs:label "Amsterdam"@en .
+
+    <http://data.krw.d2s.labs.vu.nl/group8/vocab> a owl:Ontology ;
+        owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+    g8vocab:address a owl:DatatypeProperty ;
+        rdfs:label "address"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string .
+
+    g8vocab:age a owl:DatatypeProperty ;
+        rdfs:label "age"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:int .
+
+    g8vocab:country a owl:ObjectProperty ;
+        rdfs:label "country"^^xsd:string .
+
+    g8vocab:favourite_colour a owl:ObjectProperty ;
+        rdfs:label "colour"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range :Colour .
+
+    g8vocab:hobby a owl:ObjectProperty ;
+        rdfs:label "hobby"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range :Hobby .
+
+    g8vocab:place a owl:ObjectProperty ;
+        rdfs:label "place"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range :Place .
+
+    :Country a owl:Class ;
+        rdfs:label "Country"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Place a owl:Class ;
+        rdfs:label "Place"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Colour a owl:Class ;
+        rdfs:label "Colour"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Hobby a owl:Class ;
+        rdfs:label "Hobby"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Person a owl:Class ;
+        rdfs:label "Person"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+}
+
+g8data:examplegraph {
+    g8data:Jake rdfs:label "Jake"^^xsd:string ;
+        g8vocab:address "12E Street 98"^^xsd:string ;
+        g8vocab:age "42"^^xsd:int ;
+        g8vocab:country g8data:United_States_of_America ;
+        g8vocab:favourite_colour g8data:Purple ;
+        g8vocab:hobby g8data:Ballet ;
+        g8vocab:place <http://data.krw.d2s.labs.vu.nl/group8/resource/United_States_of_America/Amsterdam> .
+
+    g8data:Jenny rdfs:label "Jenny"^^xsd:string ;
+        g8vocab:address "Leidseplein 2"^^xsd:string ;
+        g8vocab:age "12"^^xsd:int ;
+        g8vocab:country g8data:The_Netherlands ;
+        g8vocab:favourite_colour g8data:Mauve ;
+        g8vocab:hobby g8data:Dancing ;
+        g8vocab:place <http://data.krw.d2s.labs.vu.nl/group8/resource/The_Netherlands/Amsterdam> .
+
+    g8data:Jill rdfs:label "Jill"^^xsd:string ;
+        g8vocab:address "52W Street 5"^^xsd:string ;
+        g8vocab:age "28"^^xsd:int ;
+        g8vocab:country g8data:United_States_of_America ;
+        g8vocab:favourite_colour g8data:Cyan ;
+        g8vocab:hobby g8data:Carpentry ;
+        g8vocab:place <http://data.krw.d2s.labs.vu.nl/group8/resource/United_States_of_America/Amsterdam> .
+
+    g8data:John rdfs:label "John"^^xsd:string ;
+        g8vocab:address "Dam 52"^^xsd:string ;
+        g8vocab:age "32"^^xsd:int ;
+        g8vocab:country g8data:The_Netherlands ;
+        g8vocab:favourite_colour g8data:Blue ;
+        g8vocab:hobby g8data:Fishing ;
+        g8vocab:place <http://data.krw.d2s.labs.vu.nl/group8/resource/The_Netherlands/Amsterdam> .
+}
+

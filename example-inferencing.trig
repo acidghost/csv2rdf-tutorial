@@ -1,0 +1,121 @@
+@prefix : <http://data.krw.d2s.labs.vu.nl/group8/vocab/> .
+@prefix g8data: <http://data.krw.d2s.labs.vu.nl/group8/resource/> .
+@prefix g8vocab: <http://data.krw.d2s.labs.vu.nl/group8/vocab/> .
+@prefix ns1: <urn:x-rdflib:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+{
+    g8data:Ballet rdfs:label "Ballet"@en .
+
+    g8data:Blue rdfs:label "Blue"@en .
+
+    g8data:Carpentry rdfs:label "Carpentry"@en .
+
+    g8data:Cyan rdfs:label "Cyan"@en .
+
+    g8data:Dancing rdfs:label "Dancing"@en .
+
+    g8data:Fishing rdfs:label "Fishing"@en .
+
+    g8data:Mauve rdfs:label "Mauve"@en .
+
+    g8data:Purple rdfs:label "Purple"@en .
+
+    g8data:The_Netherlands rdfs:label "The Netherlands"@en .
+
+    <http://data.krw.d2s.labs.vu.nl/group8/resource/The_Netherlands/Amsterdam> rdfs:label "Amsterdam"@en .
+
+    g8data:United_States_of_America rdfs:label "United States of America"@en .
+
+    <http://data.krw.d2s.labs.vu.nl/group8/resource/United_States_of_America/Amsterdam> rdfs:label "Amsterdam"@en .
+
+    <http://data.krw.d2s.labs.vu.nl/group8/vocab> a owl:Ontology ;
+        owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+    :Country a owl:Class ;
+        rdfs:label "Country"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :address a owl:DatatypeProperty ;
+        rdfs:label "address"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:string .
+
+    :age a owl:DatatypeProperty ;
+        rdfs:label "age"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range xsd:int .
+
+    :country a owl:ObjectProperty ;
+        rdfs:label "country"^^xsd:string .
+
+    :favourite_colour a owl:ObjectProperty ;
+        rdfs:label "colour"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range :Colour .
+
+    :hobby a owl:ObjectProperty ;
+        rdfs:label "hobby"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range :Hobby .
+
+    :place a owl:ObjectProperty ;
+        rdfs:label "place"^^xsd:string ;
+        rdfs:domain :Person ;
+        rdfs:range :Place .
+
+    :Colour a owl:Class ;
+        rdfs:label "Colour"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Hobby a owl:Class ;
+        rdfs:label "Hobby"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Place a owl:Class ;
+        rdfs:label "Place"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+
+    :Person a owl:Class ;
+        rdfs:label "Person"^^xsd:string ;
+        rdfs:subClassOf owl:Thing .
+}
+
+g8data:examplegraph {
+    g8data:Jake rdfs:label "Jake"^^xsd:string ;
+        :address "12E Street 98"^^xsd:string ;
+        :age "42"^^xsd:int ;
+        :country g8data:United_States_of_America ;
+        :favourite_colour g8data:Purple ;
+        :hobby g8data:Ballet ;
+        :place <http://data.krw.d2s.labs.vu.nl/group8/resource/United_States_of_America/Amsterdam> .
+
+    g8data:Jenny rdfs:label "Jenny"^^xsd:string ;
+        :address "Leidseplein 2"^^xsd:string ;
+        :age "12"^^xsd:int ;
+        :country g8data:The_Netherlands ;
+        :favourite_colour g8data:Mauve ;
+        :hobby g8data:Dancing ;
+        :place <http://data.krw.d2s.labs.vu.nl/group8/resource/The_Netherlands/Amsterdam> .
+
+    g8data:Jill rdfs:label "Jill"^^xsd:string ;
+        :address "52W Street 5"^^xsd:string ;
+        :age "28"^^xsd:int ;
+        :country g8data:United_States_of_America ;
+        :favourite_colour g8data:Cyan ;
+        :hobby g8data:Carpentry ;
+        :place <http://data.krw.d2s.labs.vu.nl/group8/resource/United_States_of_America/Amsterdam> .
+
+    g8data:John rdfs:label "John"^^xsd:string ;
+        :address "Dam 52"^^xsd:string ;
+        :age "32"^^xsd:int ;
+        :country g8data:The_Netherlands ;
+        :favourite_colour g8data:Blue ;
+        :hobby g8data:Fishing ;
+        :place <http://data.krw.d2s.labs.vu.nl/group8/resource/The_Netherlands/Amsterdam> .
+}
+
